@@ -4,25 +4,24 @@ describe('index.js', function () {
       expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield"]);
     });
   });
-
+  
   describe('Array functions', function () {
     beforeEach(function () {
       cats.length = 0;
 
       cats.push('Milo', 'Otis', 'Garfield');
     });
-
-    describe('destructivelyAppendCat(name)', function () {
+    describe('push(name)', function () {
       it('appends a cat to the end of the cats array', function () {
-        destructivelyAppendCat('Ralph');
+        push('Ralph');
 
         expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield", "Ralph"]);
       });
     });
 
-    describe('destructivelyPrependCat(name)', function () {
+    describe('unshift(name)', function () {
       it('prepends a cat to the beginning of the cats array', function () {
-        destructivelyPrependCat("Bob");
+        unshift("Bob");
 
         expect(cats).to.have.ordered.members(["Bob", "Milo", "Otis", "Garfield"]);
       });
